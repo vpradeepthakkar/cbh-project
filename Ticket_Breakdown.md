@@ -17,27 +17,40 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 
 ## Your Breakdown Here
 
-Ticket 1: Database changes
-Description: Create a table schema which can map facility generated id to the Internal Id
+## Ticket 1: Database changes
+Description: 
+Create a table schema which can map facility generated id to the Internal Id
+
 Acceptance Criteria: Create a table called AGENT_MAP
+
 Effort: 6hrs
 
-Ticket 2: Backend - Insert/Update Facility generated Agent Id
+## Ticket 2: Backend - Insert/Update Facility generated Agent Id
 Assumption: 
 1. The Facilities have an Admin protal to onboard and agent and/or update thier profiles
 2. The Facility Generated Ids are manual entry and not some custom logic that needs to be implemented in the application
+
 Description: We need to update the existing Agent onboarding end-point to accept the Facility generated id as part of the payload
 The business logic of the end point needs to create the Agent profile as usual. Once that is created the AGENT_MAP table should be updated with the new profile. 
+
 Acceptance Criteria: Creation of a new profile should add the corresponding map in the AGENT_MAP table. In case the Facility does not wish to use the custom id, the system generated id should be used as Facility Id for consistancy
+
 Effort: 40hr (Development + Unit Test) + 10hr (Manual Testing)
 
-Ticket 3: Frontend - Insert/Update Facility generated Agent Id
+## Ticket 3: Frontend - Insert/Update Facility generated Agent Id
 Assumption: 
 1. The Facilities have an Admin protal to onboard and agent and/or update thier profiles
 2. The Facility Generated Ids are manual entry and not some custom logic that needs to be implemented in the application
+
 Description: The Admin portal needs to be updated to provide the field for custom id
+
+Acceptance Criteria: The Admin portal needs to be updated to provide the field for custom id
+
 Effort: 20hr (Development + Unit Test) + 10hr (Manual Testing)
 
-Ticket 4: Backend - Updates to Report Generation Query
+## Ticket 4: Backend - Updates to Report Generation Query
 Description: The current portal/mechanism to generate reports need to list the Ids from AGENT_MAP table. This shall entail updates to the existing Queries
+
 Acceprance Criteria: The queries need to be updated to use AGENT_MAP joined with relevant table so that reports and frone-end portals use the Facility generated ids instead of system generated ids
+
+Effort: 20hr (Development + Unit Test) + 10hr (Manual Testing)
