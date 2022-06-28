@@ -14,3 +14,10 @@ The code has been refactored considering following:
 2. The candidate value needs to be partition key if event.partitionKey is present, else it needs to be data
 3. Stringification of JSON data happens at 2 places, redundancy has been removed from this
 4. There were 2 instances where the candidate value is encrypted.  If the length of the string is more than 256 or if the event is present but the event does not have partition key. This has been moved to the end block before return
+
+The overall effect is:
+1. The candidate assignment is now understood in a single line
+2. Stringification of non-string data happens at single place
+3. The encryption logic is implemented at a single place
+
+Thereby reducing the number of branching that is happening in the code
