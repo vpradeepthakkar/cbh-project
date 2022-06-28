@@ -9,3 +9,8 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+The code has been refactored considering following:
+1. In the if-else blocks to assign candidate, the last block assigns a default value.
+2. The candidate value needs to be partition key if event.partitionKey is present, else it needs to be data
+3. Stringification of JSON data happens at 2 places, redundancy has been removed from this
+4. There were 2 instances where the candidate value is encrypted.  If the length of the string is more than 256 or if the event is present but the event does not have partition key. This has been moved to the end block before return
